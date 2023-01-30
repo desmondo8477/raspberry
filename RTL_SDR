@@ -1,0 +1,32 @@
+Installing RTL-SDR on a Raspberry pi (linux) youtube link https://www.youtube.com/watch?v=1pr319FvOwI
+
+sudo apt-git update
+sudo apt-git upgrade
+sudo apt-git install git
+sudo apt-git install cmake
+sudo apt-git install build-essential
+sudo apt-git install libusb-1.0-0-dev
+sudo git clonegit://git.osmocom.org/rtl-sdr.git
+cd rtl-sdr/
+sudo mkdir build
+cd build
+ls
+sudo cmake ../-DINSTALL_UDEV_RULES=ON
+sudo make
+sudo make install
+sudo ldconfig
+sudo cp ../rtl-sdr.rules/etc/udev/rules.d/
+clear
+cd etc
+cd modprobe.d
+sudo touch blacklist-rtl.conf
+ls
+sudo nano blacklist-rtl.conf
+
+add a line to file
+
+blacklist dvb_usb_rtl28xxu
+save file
+reboot and plug in dongle
+now test dongle
+rtl_test -t
