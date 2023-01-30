@@ -6,7 +6,7 @@ sudo apt-get install git
 sudo apt-get install cmake
 sudo apt-get install build-essential
 sudo apt-get install libusb-1.0-0-dev
-sudo git clonegit://git.osmocom.org/rtl-sdr.git
+sudo git clone git://git.osmocom.org/rtl-sdr.git
 cd rtl-sdr/
 sudo mkdir build
 cd build
