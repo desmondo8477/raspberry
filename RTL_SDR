@@ -1,4 +1,7 @@
 Installing RTL-SDR on a Raspberry pi (linux) youtube link https://www.youtube.com/watch?v=1pr319FvOwI
+# start in /etc/apt
+#cd /etc
+#cd apt
 
 sudo apt-get update
 sudo apt-get upgrade
@@ -11,10 +14,13 @@ cd rtl-sdr/
 sudo mkdir build
 cd build
 ls
-sudo cmake ../-DINSTALL_UDEV_RULES=ON
+sudo cmake ../ -DINSTALL_UDEV_RULES=ON
 sudo make
 sudo make install
 sudo ldconfig
+
+#could not get this lineto work
+
 sudo cp ../rtl-sdr.rules/etc/udev/rules.d/
 clear
 cd etc
