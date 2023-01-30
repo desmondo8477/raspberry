@@ -1,11 +1,11 @@
 Installing RTL-SDR on a Raspberry pi (linux) youtube link https://www.youtube.com/watch?v=1pr319FvOwI
 
-sudo apt-git update
-sudo apt-git upgrade
-sudo apt-git install git
-sudo apt-git install cmake
-sudo apt-git install build-essential
-sudo apt-git install libusb-1.0-0-dev
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install git
+sudo apt-get install cmake
+sudo apt-get install build-essential
+sudo apt-get install libusb-1.0-0-dev
 sudo git clonegit://git.osmocom.org/rtl-sdr.git
 cd rtl-sdr/
 sudo mkdir build
