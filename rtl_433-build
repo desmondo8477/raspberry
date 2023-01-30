@@ -1,13 +1,11 @@
+How to decode 433Mhz low power devices using RTL433 (youtube)
+
+
 git clone https://github.com/merbanan/rtl_433.git
-
 cd rtl_433
-
 mkdir build
-
 cmake .//
-
 make
-
 sudo make install
 
 rtl_433 -G
