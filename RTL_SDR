@@ -21,7 +21,7 @@ sudo ldconfig
 
 #could not get this lineto work
 
-sudo cp ../rtl-sdr.rules/etc/udev/rules.d/
+sudo cp ../rtl-sdr.rules /etc/udev/rules.d/
 clear
 cd etc
 cd modprobe.d
