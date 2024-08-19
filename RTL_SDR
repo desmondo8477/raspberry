@@ -23,7 +23,7 @@ sudo ldconfig
 
 sudo cp ../rtl-sdr.rules /etc/udev/rules.d/
 clear
-cd etc
+cd /etc
 cd modprobe.d
 sudo touch blacklist-rtl.conf
 ls
