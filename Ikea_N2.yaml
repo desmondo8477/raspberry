@@ -1,0 +1,63 @@
+blueprint:
+  name: IKEA Remote Control N2 - Button Press
+  description: Automates actions based on button presses on the IKEA Remote Control N2.
+  domain: automation
+  input:
+    ikea_remote:
+      name: IKEA Remote Control N2
+      description: The IKEA Remote Control N2 to listen to.
+      selector:
+        device:
+          integration: zigbee
+    button_1_action:
+      name: Action for Button 1
+      description: The action to trigger when Button 1 is pressed.
+      default: []
+      selector:
+        action: {}
+    button_2_action:
+      name: Action for Button 2
+      description: The action to trigger when Button 2 is pressed.
+      default: []
+      selector:
+        action: {}
+    button_3_action:
+      name: Action for Button 3
+      description: The action to trigger when Button 3 is pressed.
+      default: []
+      selector:
+        action: {}
+  trigger:
+    - platform: device
+      device_id: !input ikea_remote
+      domain: zigbee
+      type: remote_button_short_press
+      subtype: "button_1"
+    - platform: device
+      device_id: !input ikea_remote
+      domain: zigbee
+      type: remote_button_short_press
+      subtype: "button_2"
+    - platform: device
+      device_id: !input ikea_remote
+      domain: zigbee
+      type: remote_button_short_press
+      subtype: "button_3"
+
+  action:
+    - choose:
+        - conditions:
+            - condition: trigger
+              id: button_1_action
+          sequence:
+            - !input button_1_action
+        - conditions:
+            - condition: trigger
+              id: button_2_action
+          sequence:
+            - !input button_2_action
+        - conditions:
+            - condition: trigger
+              id: button_3_action
+          sequence:
+            - !input button_3_action
